@@ -22,7 +22,9 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        run: npm install  # ✅ Removed working-directory
+        run: npm install
+        working-directory: DELTA_GPT_TRADING_BOT_COMPLETE  # ✅ Folder name
 
       - name: Run App
-        run: node app.js  # ✅ Removed working-directory
+        run: node app.js
+        working-directory: DELTA_GPT_TRADING_BOT_COMPLETE  # ✅ Folder name
