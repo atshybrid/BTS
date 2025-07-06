@@ -1,0 +1,28 @@
+name: Run Node App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      ENV: ${{ secrets.ENV }}  # 👈 using your secret here
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run App
+        run: node app.js
