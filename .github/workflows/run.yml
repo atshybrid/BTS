@@ -12,12 +12,13 @@ jobs:
     env:
       ENV: ${{ secrets.ENV }}
 
+    defaults:
+      run:
+        working-directory: DELTA_GPT_TRADING_BOT_COMPLETE
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Set working directory
-        run: echo "Changing directory to DELTA_GPT_TRADING_BOT_COMPLETE"
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -25,9 +26,7 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies
-        working-directory: DELTA_GPT_TRADING_BOT_COMPLETE
         run: npm install
 
       - name: Run App
-        working-directory: DELTA_GPT_TRADING_BOT_COMPLETE
         run: node app.js
