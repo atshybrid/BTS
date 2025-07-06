@@ -1,1 +1,2 @@
-console.log("🌟 Hello! ENV is:", process.env.ENV);
+// app.js
+console.log("✅ ENV from GitHub Secret:", process.env.ENV || 'Not Set');
