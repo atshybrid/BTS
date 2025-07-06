@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ENV: ${{ secrets.ENV }}  # 👈 using your secret here
+      ENV: ${{ secrets.ENV }}  # ✅ Correct secret syntax
 
     steps:
       - name: Checkout code
